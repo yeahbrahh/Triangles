@@ -137,7 +137,7 @@ public class Main {
         return sc.nextInt();
 
     }
-    //Prompts User for Symbol to Build Pyramid
+    //Prompts User for Symbol
     static String fill(int size) {
         System.out.print("\nChoose a character to build the pyramid with: ");
         sc.nextLine();
@@ -146,19 +146,18 @@ public class Main {
 
 //Main Method
 
-    // Calls
     public static void main(String[] args) {
         boolean goAgain = true;
         while (goAgain) { //Boolean conditional to play again
             int p = size(); // Reassigns method size() to the new variable p
-            if (p <= 0) { // Conditional to make user choose a valid size
+            if (p <= 0) { // Conditional for invalid response
                 System.out.println("Size must be between 1 and 50!");
                 size();
             }
-            String t = fill(p);// Assigns fill() the value of p which is now = the method size()
-            for (int i = 1; i <= p; i++) {
+            String t = fill(p);// Assigns fill() the value of p (which is now = size())
+            for (int i = 1; i <= p; i++) { // Space, character
                 for (int j = 1; j <= p - i; j++) {
-                    System.out.print(" ");
+                    System.out.print(" ");// whitespace
                 }
                 for (int k = 1; k <= 2 * i - 1; k++) {
                     System.out.print(t);
