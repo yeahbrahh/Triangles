@@ -131,12 +131,14 @@
 import java.util.Scanner;
 public class Main {
     static Scanner sc = new Scanner(System.in);
-// Prompts User for Pyramid Size
+
+    // Prompts User for Pyramid Size
     static int size() {
         System.out.print("\nChoose a pyramid size between 1 and 50: ");
         return sc.nextInt();
 
     }
+
     //Prompts User for Symbol
     static String fill(int size) {
         System.out.print("\nChoose a character to build the pyramid with: ");
@@ -159,15 +161,19 @@ public class Main {
                 for (int j = 1; j <= p - i; j++) {
                     System.out.print(" ");// whitespace
                 }
-                for (int k = 1; k <= 2 * i - 1; k++) {
-                    System.out.print(t);
+                for (int k = 1; k <= i; k++) {
+                    System.out.print(t + " ");// Prints t variable fill(p)
                 }
                 System.out.println();
             }
-            System.out.print("\nPress 1 to make another triangle, or any other key to exit: ");
-            int choice = sc.nextInt();
-            goAgain = (choice == 1);
+
+                System.out.print("\nPress 1 to make another triangle, or any other key to exit: ");
+                int choice = sc.nextInt();
+                goAgain = (choice == 1);
             }
         }
     }
+
+
+
 
