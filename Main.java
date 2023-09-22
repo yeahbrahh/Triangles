@@ -152,7 +152,7 @@ public class Main {
         boolean goAgain = true;
         while (goAgain) { //Boolean conditional to play again
             int p = size(); // Reassigns method size() to the new variable p
-            if (p <= 0) { // Conditional for invalid response
+            if (p <= 0 || p > 50) { // Conditional for invalid response
                 System.out.println("Size must be between 1 and 50!");
                 size();
             }
