@@ -147,15 +147,19 @@ public class Main {
     }
 
 //Main Method
-
     public static void main(String[] args) {
         boolean goAgain = true;
         while (goAgain) { //Boolean conditional to play again
-            int p = size(); // Reassigns method size() to the new variable p
-            if (p <= 0 || p > 50) { // Conditional for invalid response
+            int p;
+            do {
+                p = size();
+                if (p < 1 || p > 50){
+
                 System.out.println("Size must be between 1 and 50!");
                 size();
             }
+            } while(p < 1 || p > 50);
+
             String t = fill(p);// Assigns fill() the value of p (which is now = size())
             for (int i = 1; i <= p; i++) { // Space, character
                 for (int j = 1; j <= p - i; j++) {
